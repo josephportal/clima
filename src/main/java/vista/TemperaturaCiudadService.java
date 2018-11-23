@@ -34,7 +34,6 @@ public class TemperaturaCiudadService {
 			int a = 0, b = 0;
 
 			for (int i = 0; i < clim.size(); i++) {
-				System.out.println(clim.get(i)[0] + "\t" + clim.get(i)[1] + " ------ " + i);
 				if (format.format((Date) clim.get(i)[1]).equals(format.format((Date) clim.get(0)[1]))) {
 					fechax[a] = (float) clim.get(i)[0];
 					a++;
@@ -44,10 +43,7 @@ public class TemperaturaCiudadService {
 				}
 			}
 
-			System.out.println(fechax.length + " - " + fechay.length);
 			Regresion regresion = new Regresion(fechax, fechay);
-			//System.out.println("Indice de correlación: " + regresion.correlacion());
-			//System.out.println((double) Math.round(regresion.correlacion() * 10d) / 10d);
 			gra = new Object[1];
 			gra[0] = ((double) Math.round(regresion.correlacion() * 10d) / 10d)*k;
 			grad.add(gra);
