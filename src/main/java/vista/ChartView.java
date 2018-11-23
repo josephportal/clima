@@ -59,14 +59,12 @@ public class ChartView extends Thread implements Serializable {
 				
 			}
 		};
-		//System.out.println("MeterGaugeChartModel: "+temp);
 
 		return new MeterGaugeChartModel(valor, intervals);
 	}
 
 	private void createMeterGaugeModels() {
 		meterGaugeModel1 = initMeterGaugeModel();
-		//meterGaugeModel1.setTitle("Humedad");
 		
 		if (opc.equals("t")) {
 			meterGaugeModel1.setGaugeLabel("Temp: "+valor+"°");
@@ -74,18 +72,6 @@ public class ChartView extends Thread implements Serializable {
 			meterGaugeModel1.setGaugeLabel("Humedad: "+valor);
 		}
 		
-		
-
-		/*
-		 * meterGaugeModel2 = initMeterGaugeModel();
-		 * meterGaugeModel2.setTitle("Custom Options");
-		 * meterGaugeModel2.setSeriesColors("66cc66,93b75f,E7E658,cc6666");
-		 * meterGaugeModel2.setGaugeLabel("km/h");
-		 * meterGaugeModel2.setGaugeLabelPosition("bottom");
-		 * meterGaugeModel2.setShowTickLabels(false);
-		 * meterGaugeModel2.setLabelHeightAdjust(110);
-		 * meterGaugeModel2.setIntervalOuterRadius(100);
-		 */
 	}
 
 	public ClimaService getService() {

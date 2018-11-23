@@ -15,7 +15,6 @@ public class CiudadService {
 	
 	private List<String> ciudades = new ArrayList<>();
 
-	
 	@PostConstruct
 	public void init() {
 		CiudadDao daoc = new CiudadDao();
@@ -28,9 +27,4 @@ public class CiudadService {
 	public List<String> getCiudadesService() {
 		return ciudades;
 	}
-	
-	
-	
-	
-
 }

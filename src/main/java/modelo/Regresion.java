@@ -25,7 +25,7 @@ public class Regresion {
         }
         b = (n * pxy - sx * sy) / (n * sx2 - sx * sx);
         a = (sy - b * sx) / n;
-        System.out.println("Lineal: "+a);
+        
     }
 
     public double correlacion() {

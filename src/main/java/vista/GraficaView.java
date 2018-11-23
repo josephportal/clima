@@ -203,9 +203,6 @@ public class GraficaView  implements Serializable{
 		Axis yAxis = lineModel1.getAxis(AxisType.Y);
 		yAxis.setMin(0);
 		yAxis.setMax(10);
-		/*yAxis.setTickFormat("%d");
-		yAxis.setLabel("Horas");*/
-		
 		
 		zoomModel = initLinearModel();
 		zoomModel.setTitle("Zoom");
@@ -404,11 +401,7 @@ public class GraficaView  implements Serializable{
 		Axis yAxis = animatedModel1.getAxis(AxisType.Y);
 		yAxis.setMin(0);
 		yAxis.setMax(100);
-		
-		/*
-		Axis xAxis = animatedModel1.getAxis(AxisType.X);
-		xAxis.setMin(0);
-		xAxis.setMax(25);*/
+
 	}
 
 	private void createDateModel() {
