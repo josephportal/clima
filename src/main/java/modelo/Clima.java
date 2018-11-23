@@ -1,16 +1,13 @@
 package modelo;
 
-import java.io.Serializable;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
 
 @Entity
 @NamedQuery(name="Clima.findAll", query="SELECT c FROM Clima c")
-public class Clima implements Serializable {
+public class Clima {
 	
-	private static final long serialVersionUID = 1L;
-
 	@Id
 	@SequenceGenerator(name="CLIMA_IDCLIMA_GENERATOR" )
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="CLIMA_IDCLIMA_GENERATOR")

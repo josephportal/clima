@@ -62,15 +62,10 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>clima</finalName>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -92,4 +87,10 @@
 			</plugin>
 		</plugins>
 	</build>
+
+
+
+
+
+
 </project>

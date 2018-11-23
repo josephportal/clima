@@ -1,6 +1,5 @@
 package vista;
 
-import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -10,14 +9,13 @@ import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import org.primefaces.event.SelectEvent;
 
-import dao.ClimaDao;
+import controlador.ClimaControlador;
 import modelo.Clima;
 
 @ManagedBean(name = "climaService", eager = true)
 @ApplicationScoped
-public class ClimaService implements Serializable{
+public class ClimaService {
 
-	private static final long serialVersionUID = 1L;
 	private Clima clima;
 	private List<Object[]> promTemp;
 	
@@ -34,7 +32,7 @@ public class ClimaService implements Serializable{
         SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
         fecha = format.format(date);
         
-		ClimaDao dao = new ClimaDao();
+		ClimaControlador dao = new ClimaControlador();
 		promTemp = dao.consultarClima(ciudad, fecha);
 	}
 	
@@ -50,7 +48,7 @@ public class ClimaService implements Serializable{
 
 	@PostConstruct
 	public void init() {
-		ClimaDao dao = new ClimaDao();
+		ClimaControlador dao = new ClimaControlador();
 		clima = dao.consultarClimaActual(ciudad);
 		
 		promTemp = new ArrayList<>();

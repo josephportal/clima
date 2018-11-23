@@ -6,7 +6,7 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 
-import dao.CiudadDao;
+import controlador.CiudadControlador;
 import modelo.Ciudad;
 
 @ManagedBean(name = "ciudadService", eager = true)
@@ -17,7 +17,7 @@ public class CiudadService {
 
 	@PostConstruct
 	public void init() {
-		CiudadDao daoc = new CiudadDao();
+		CiudadControlador daoc = new CiudadControlador();
 		List<Ciudad> ciudad = daoc.mostrarCiudad();
 		for (int i = 0; i < ciudad.size(); i++) {
 			ciudades.add(i, ciudad.get(i).getNombre());

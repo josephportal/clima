@@ -1,6 +1,5 @@
 package modelo;
 
-import java.io.Serializable;
 import javax.persistence.*;
 import java.util.List;
 
@@ -11,8 +10,7 @@ import java.util.List;
  */
 @Entity
 @NamedQuery(name="Ciudad.findAll", query="SELECT c FROM Ciudad c")
-public class Ciudad implements Serializable {
-	private static final long serialVersionUID = 1L;
+public class Ciudad {
 
 	@Id
 	@SequenceGenerator(name="CIUDAD_IDCIUDAD_GENERATOR" )

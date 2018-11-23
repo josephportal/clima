@@ -1,19 +1,17 @@
 package modelo;
 
-import java.io.Serializable;
+public class Regresion {
 
-public class Regresion implements Serializable{
 
-	private static final long serialVersionUID = 1L;
-	private double[] x;
+    private double[] x;
     private double[] y;
-    private int n;
-    public double a, b;
+    private int n;          //número de datos
+    public double a, b;    //pendiente y ordenada en el origen
 
     public Regresion(double[] x, double[] y) {
         this.x = x;
         this.y = y;
-        n = x.length; 
+        n = x.length; //número de datos
     }
 
     @SuppressWarnings("unused")
@@ -29,10 +27,11 @@ public class Regresion implements Serializable{
         }
         b = (n * pxy - sx * sy) / (n * sx2 - sx * sx);
         a = (sy - b * sx) / n;
-        
+        System.out.println("Lineal: "+a);
     }
 
     public double correlacion() {
+//valores medios
         double suma = 0.0;
         for (int i = 0; i < n; i++) {
             suma += x[i];
@@ -44,8 +43,7 @@ public class Regresion implements Serializable{
             suma += x[i];
         }
         double mediaY = suma / n;
-
-
+//coeficiente de correlación
         double pxy, sx2, sy2;
         pxy = sx2 = sy2 = 0.0;
         for (int i = 0; i < n; i++) {
