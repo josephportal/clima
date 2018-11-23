@@ -17,13 +17,14 @@ public class SelectOneMenuView implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private Ciudad ciudad;
-	private List<String> ciudades = new ArrayList<>();
+	private List<String> ciudades;
 
 	@ManagedProperty("#{ciudadService}")
 	private CiudadService service;
 
 	@PostConstruct
 	public void init() {
+		ciudades = new ArrayList<>();
 		ciudades = service.getCiudadesService();
 	}
 
