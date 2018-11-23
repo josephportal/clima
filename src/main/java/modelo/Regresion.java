@@ -4,16 +4,17 @@ public class Regresion {
 
     private double[] x;
     private double[] y;
-    private int n;          //número de datos
-    public double a, b;    //pendiente y ordenada en el origen
+    private int n;
+    public double a, b;
 
     public Regresion(double[] x, double[] y) {
         this.x = x;
         this.y = y;
-        n = x.length; //número de datos
+        n = x.length; 
     }
 
-    public void lineal() {
+    @SuppressWarnings("unused")
+	public void lineal() {
         double pxy, sx, sy, sx2, sy2;
         pxy = sx = sy = sx2 = sy2 = 0.0;
         for (int i = 0; i < n; i++) {
@@ -29,7 +30,6 @@ public class Regresion {
     }
 
     public double correlacion() {
-//valores medios
         double suma = 0.0;
         for (int i = 0; i < n; i++) {
             suma += x[i];
@@ -41,7 +41,8 @@ public class Regresion {
             suma += x[i];
         }
         double mediaY = suma / n;
-//coeficiente de correlación
+
+
         double pxy, sx2, sy2;
         pxy = sx2 = sy2 = 0.0;
         for (int i = 0; i < n; i++) {
