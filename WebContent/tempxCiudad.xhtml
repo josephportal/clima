@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Temperatura por Ciudad</title>
+
+</h:head>
+
+<h:body>
+
+
+	<h:form>
+		<p:menubar>
+			<f:facet name="options">
+				<p:menuButton value="Menu">
+					<p:menuitem value="Temperatura Actual"
+						url="http://localhost:8080/clima/faces/vertemperatura.xhtml"
+						icon="pi pi-save" />
+					<p:menuitem value="Humedad Actual"
+						url="http://localhost:8080/clima/faces/verhumedad.xhtml"
+						icon="pi pi-refresh" />
+					<p:menuitem value="Grafica Lineal"
+						url="http://localhost:8080/clima/faces/grafica.xhtml"
+						icon="pi pi-refresh" />
+					<p:menuitem value="Lista de Ciudades"
+						url="http://localhost:8080/clima/faces/tempxCiudad.xhtml"
+						icon="pi pi-refresh" />
+				</p:menuButton>
+			</f:facet>
+		</p:menubar>
+	</h:form>
+
+
+	<br></br>
+	<br></br>
+
+	<p:dataTable class="table-secondary" id="eventsDT"
+		value="#{temperaturaCiudadService.datos}" var="datos">
+		<f:facet name="header">
+            Lista de ciudades con temperatura actual
+        </f:facet>
+		<p:column headerText="Ciudad">
+			<h:outputText value="#{datos[0]}" />
+		</p:column>
+		<p:column headerText="Temperatura">
+			<h:outputText value="#{datos[1]}" />
+		</p:column>
+		<p:column headerText="Grado de Correlacion">
+			<h:outputText value="#{datos[2]}"/>
+		</p:column>
+	</p:dataTable>
+
+
+
+</h:body>
+</html>
+

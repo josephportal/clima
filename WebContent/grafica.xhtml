@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Grafica de Temperatura</title>
+</h:head>
+
+<h:body>
+
+	<h:form id="myForm">
+
+
+		<p:menubar>
+			<f:facet name="options">
+				<p:menuButton value="Menu">
+					<p:menuitem value="Temperatura Actual"
+						url="http://localhost:8080/clima/faces/vertemperatura.xhtml"
+						icon="pi pi-save" />
+					<p:menuitem value="Humedad Actual"
+						url="http://localhost:8080/clima/faces/verhumedad.xhtml"
+						icon="pi pi-refresh" />
+					<p:menuitem value="Grafica Lineal"
+						url="http://localhost:8080/clima/faces/grafica.xhtml"
+						icon="pi pi-refresh" />
+					<p:menuitem value="Lista de Ciudades"
+						url="http://localhost:8080/clima/faces/tempxCiudad.xhtml"
+						icon="pi pi-refresh" />
+				</p:menuButton>
+			</f:facet>
+		</p:menubar>
+
+
+
+		<h:panelGrid columns="2"
+			style="margin: auto; width: 30%; padding: 10px;" cellpadding="5">
+			<p:outputLabel for="country" value="Ciudad: " />
+			<p:selectOneMenu id="country" value="#{climaService.ciudad}"
+				style="width:150px">
+				<p:ajax listener="#{climaService.onCitySelect}" />
+				<f:selectItems value="#{selectOneMenuView.ciudades}" />
+			</p:selectOneMenu>
+
+			<p:outputLabel for="button" value="Fecha:" />
+			<p:calendar id="button" value="#{climaService.fecha}" showOn="button">
+				<p:ajax event="dateSelect" listener="#{climaService.onDateSelect}"
+					update=":myForm:chart" />
+			</p:calendar>
+
+		</h:panelGrid>
+
+		<h:panelGrid columns="2" columnClasses="left,right"
+			style="margin: auto; width: 30%; padding: 10px;">
+			<p:chart id="chart" type="line" model="#{graficaView.animatedModel1}"
+				style="width:400px;" />
+		</h:panelGrid>
+
+	</h:form>
+
+
+
+
+</h:body>
+</html>
+
+
+
