@@ -1,5 +1,6 @@
 package vista;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -14,8 +15,9 @@ import modelo.Clima;
 
 @ManagedBean(name = "climaService", eager = true)
 @ApplicationScoped
-public class ClimaService {
+public class ClimaService implements Serializable{
 
+	private static final long serialVersionUID = 1L;
 	private Clima clima;
 	private List<Object[]> promTemp;
 	

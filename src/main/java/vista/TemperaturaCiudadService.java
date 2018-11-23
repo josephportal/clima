@@ -1,5 +1,6 @@
 package vista;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -13,8 +14,9 @@ import modelo.Regresion;
 
 @ManagedBean(name = "temperaturaCiudadService", eager = true)
 @ApplicationScoped
-public class TemperaturaCiudadService {
+public class TemperaturaCiudadService implements Serializable{
 
+	private static final long serialVersionUID = 1L;
 	private List<Object[]> datos;
 
 	@PostConstruct

@@ -1,5 +1,6 @@
 package dao;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.List;
@@ -11,7 +12,9 @@ import javax.persistence.Query;
 import modelo.Ciudad;
 import modelo.Clima;
 
-public class ClimaDao {
+public class ClimaDao implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 
 	@SuppressWarnings("unchecked")
 	public Clima consultarClimaActual(String ciudad) {

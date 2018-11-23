@@ -5,13 +5,10 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 
-/**
- * The persistent class for the clima database table.
- * 
- */
 @Entity
 @NamedQuery(name="Clima.findAll", query="SELECT c FROM Clima c")
 public class Clima implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
 
 	@Id

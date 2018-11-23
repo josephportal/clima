@@ -1,8 +1,11 @@
 package modelo;
 
-public class Regresion {
+import java.io.Serializable;
 
-    private double[] x;
+public class Regresion implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	private double[] x;
     private double[] y;
     private int n;
     public double a, b;
