@@ -76,6 +76,8 @@
 							<goal>copy</goal>
 						</goals>
 						<configuration>
+							<source>1.8</source>
+							<target>1.8</target>
 							<artifactItems>
 								<artifactItem>
 									<groupId>com.github.jsimone</groupId>
@@ -90,4 +92,8 @@
 			</plugin>
 		</plugins>
 	</build>
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
 </project>
