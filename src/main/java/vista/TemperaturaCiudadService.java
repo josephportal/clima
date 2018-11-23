@@ -52,7 +52,6 @@ public class TemperaturaCiudadService {
 		
 		Object[] da;
 		datos = new ArrayList<>();
-		System.out.println(data.size());
 		for (int i = 0; i < data.size(); i++) {
 			da = new Object[3];
 			da[0] = data.get(i)[0];
